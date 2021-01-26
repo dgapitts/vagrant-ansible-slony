@@ -1,4 +1,5 @@
-[~/projects/vagrant-ansible-slony] # vagrant destroy;vagrant up;vagrant ssh -c "sudo bash /vagrant/base_setup.sh";vagrant ssh -c "psql -d pgbenchslave -c 'select count(*) from pgbench_branches;'"
+[~/projects/vagrant-ansible-slony] # uptime;vagrant destroy;vagrant up;vagrant ssh -c "sudo bash /vagrant/base_setup_single_node.sh";vagrant ssh -c "psql -d pgbenchslave -c 'select count(*) from pgbench_branches;'";uptime
+ 11:44:08 up 31 days,  1:36,  4 users,  load average: 0,29, 0,42, 0,36
     db1: Are you sure you want to destroy the 'db1' VM? [y/N] y
 ==> db1: Forcing shutdown of VM...
 ==> db1: Destroying VM and associated drives...
@@ -6,7 +7,7 @@ Bringing machine 'db1' up with 'virtualbox' provider...
 ==> db1: Importing base box 'geerlingguy/centos7'...
 ==> db1: Matching MAC address for NAT networking...
 ==> db1: Checking if box 'geerlingguy/centos7' is up to date...
-==> db1: Setting the name of the VM: vagrant-ansible-slony_db1_1611569671394_70281
+==> db1: Setting the name of the VM: vagrant-ansible-slony_db1_1611657870694_68609
 ==> db1: Clearing any previously set network interfaces...
 ==> db1: Preparing network interfaces based on configuration...
     db1: Adapter 1: nat
@@ -292,10 +293,10 @@ db1                        : ok=28   changed=16   unreachable=0    failed=0    s
 ADD EXTRA ALIAS VIA .bashrc
 Loaded plugins: fastestmirror
 Loading mirror speeds from cached hostfile
- * base: mirror.hostnet.nl
- * epel: mirror.hostnet.nl
- * extras: ams.edge.kernel.org
- * updates: mirror.hostnet.nl
+ * base: ftp.tudelft.nl
+ * epel: mirror.netcologne.de
+ * extras: mirror.nl.datapacket.com
+ * updates: centos.mirror.liteserver.nl
 Package wget-1.14-18.el7_6.1.x86_64 already installed and latest version
 Resolving Dependencies
 --> Running transaction check
@@ -328,11 +329,11 @@ Upgrade  1 Package (+1 Dependent package)
 Total download size: 665 k
 Downloading packages:
 Delta RPMs disabled because /usr/bin/applydeltarpm not installed.
-(1/3): libcurl-7.29.0-59.el7_9.1.x86_64.rpm                                                                      | 223 kB  00:00:00     
-(2/3): curl-7.29.0-59.el7_9.1.x86_64.rpm                                                                         | 271 kB  00:00:00     
+(1/3): curl-7.29.0-59.el7_9.1.x86_64.rpm                                                                         | 271 kB  00:00:00     
+(2/3): libcurl-7.29.0-59.el7_9.1.x86_64.rpm                                                                      | 223 kB  00:00:00     
 (3/3): unzip-6.0-21.el7.x86_64.rpm                                                                               | 171 kB  00:00:00     
 ----------------------------------------------------------------------------------------------------------------------------------------
-Total                                                                                                   1.3 MB/s | 665 kB  00:00:00     
+Total                                                                                                   2.4 MB/s | 665 kB  00:00:00     
 Running transaction check
 Running transaction test
 Transaction test succeeded
@@ -360,10 +361,10 @@ Dependency Updated:
 Complete!
 Loaded plugins: fastestmirror
 Loading mirror speeds from cached hostfile
- * base: mirror.hostnet.nl
- * epel: mirror.hostnet.nl
- * extras: ams.edge.kernel.org
- * updates: mirror.hostnet.nl
+ * base: ftp.tudelft.nl
+ * epel: mirror.netcologne.de
+ * extras: mirror.nl.datapacket.com
+ * updates: centos.mirror.liteserver.nl
 Resolving Dependencies
 --> Running transaction check
 ---> Package perl.x86_64 4:5.16.3-295.el7 will be updated
@@ -391,10 +392,10 @@ Upgrade  1 Package (+1 Dependent package)
 Total download size: 8.6 M
 Downloading packages:
 Delta RPMs disabled because /usr/bin/applydeltarpm not installed.
-(1/2): perl-libs-5.16.3-297.el7.x86_64.rpm                                                                       | 689 kB  00:00:01     
-(2/2): perl-5.16.3-297.el7.x86_64.rpm                                                                            | 8.0 MB  00:00:02     
+(1/2): perl-libs-5.16.3-297.el7.x86_64.rpm                                                                       | 689 kB  00:00:00     
+(2/2): perl-5.16.3-297.el7.x86_64.rpm                                                                            | 8.0 MB  00:00:00     
 ----------------------------------------------------------------------------------------------------------------------------------------
-Total                                                                                                   4.2 MB/s | 8.6 MB  00:00:02     
+Total                                                                                                    16 MB/s | 8.6 MB  00:00:00     
 Running transaction check
 Running transaction test
 Transaction test succeeded
@@ -417,10 +418,10 @@ Dependency Updated:
 Complete!
 Loaded plugins: fastestmirror
 Loading mirror speeds from cached hostfile
- * base: mirror.hostnet.nl
- * epel: mirror.hostnet.nl
- * extras: ams.edge.kernel.org
- * updates: mirror.hostnet.nl
+ * base: ftp.tudelft.nl
+ * epel: mirror.netcologne.de
+ * extras: mirror.nl.datapacket.com
+ * updates: centos.mirror.liteserver.nl
 Package slony1-11 is obsoleted by slony1_11, trying to install slony1_11-2.2.10-1.rhel7.x86_64 instead
 Resolving Dependencies
 --> Running transaction check
@@ -484,15 +485,15 @@ Downloading packages:
 (2/11): perl-Compress-Raw-Zlib-2.061-4.el7.x86_64.rpm                                                            |  57 kB  00:00:00     
 (3/11): perl-DBD-Pg-2.19.3-4.el7.x86_64.rpm                                                                      | 195 kB  00:00:00     
 (4/11): perl-Data-Dumper-2.145-3.el7.x86_64.rpm                                                                  |  47 kB  00:00:00     
-(5/11): perl-PlRPC-0.2020-14.el7.noarch.rpm                                                                      |  36 kB  00:00:00     
-(6/11): perl-Net-Daemon-0.48-5.el7.noarch.rpm                                                                    |  51 kB  00:00:00     
-(7/11): perl-Switch-2.16-7.el7.noarch.rpm                                                                        |  22 kB  00:00:00     
-(8/11): perl-IO-Compress-2.061-2.el7.noarch.rpm                                                                  | 260 kB  00:00:00     
-(9/11): perl-version-0.99.07-6.el7.x86_64.rpm                                                                    |  84 kB  00:00:00     
-(10/11): perl-DBI-1.627-4.el7.x86_64.rpm                                                                         | 802 kB  00:00:00     
-(11/11): slony1_11-2.2.10-1.rhel7.x86_64.rpm                                                                     | 281 kB  00:00:01     
+(5/11): perl-IO-Compress-2.061-2.el7.noarch.rpm                                                                  | 260 kB  00:00:00     
+(6/11): perl-DBI-1.627-4.el7.x86_64.rpm                                                                          | 802 kB  00:00:00     
+(7/11): perl-Net-Daemon-0.48-5.el7.noarch.rpm                                                                    |  51 kB  00:00:00     
+(8/11): perl-PlRPC-0.2020-14.el7.noarch.rpm                                                                      |  36 kB  00:00:00     
+(9/11): perl-Switch-2.16-7.el7.noarch.rpm                                                                        |  22 kB  00:00:00     
+(10/11): perl-version-0.99.07-6.el7.x86_64.rpm                                                                   |  84 kB  00:00:00     
+(11/11): slony1_11-2.2.10-1.rhel7.x86_64.rpm                                                                     | 281 kB  00:00:03     
 ----------------------------------------------------------------------------------------------------------------------------------------
-Total                                                                                                   850 kB/s | 1.8 MB  00:00:02     
+Total                                                                                                   472 kB/s | 1.8 MB  00:00:03     
 Running transaction check
 Running transaction test
 Transaction test succeeded
@@ -584,10 +585,10 @@ createuser: too many command-line arguments (first is "changeme")
 Try "createuser --help" for more information.
 Loaded plugins: fastestmirror
 Loading mirror speeds from cached hostfile
- * base: mirror.hostnet.nl
- * epel: mirror.hostnet.nl
- * extras: ams.edge.kernel.org
- * updates: mirror.hostnet.nl
+ * base: ftp.tudelft.nl
+ * epel: mirror.netcologne.de
+ * extras: mirror.nl.datapacket.com
+ * updates: centos.mirror.liteserver.nl
 Resolving Dependencies
 --> Running transaction check
 ---> Package sysstat.x86_64 0:10.1.5-19.el7 will be installed
@@ -616,7 +617,7 @@ Downloading packages:
 (1/2): lm_sensors-libs-3.4.0-8.20160601gitf9185e5.el7.x86_64.rpm                                                 |  42 kB  00:00:00     
 (2/2): sysstat-10.1.5-19.el7.x86_64.rpm                                                                          | 315 kB  00:00:00     
 ----------------------------------------------------------------------------------------------------------------------------------------
-Total                                                                                                   659 kB/s | 357 kB  00:00:00     
+Total                                                                                                   1.1 MB/s | 357 kB  00:00:00     
 Running transaction check
 Running transaction test
 Transaction test succeeded
@@ -638,27 +639,27 @@ Complete!
    Loaded: loaded (/usr/lib/systemd/system/postgresql-11.service; enabled; vendor preset: disabled)
   Drop-In: /etc/systemd/system/postgresql-11.service.d
            └─custom.conf
-   Active: active (running) since ma 2021-01-25 10:16:28 UTC; 8ms ago
+   Active: active (running) since di 2021-01-26 10:46:22 UTC; 7ms ago
      Docs: https://www.postgresql.org/docs/11/static/
-  Process: 5839 ExecStartPre=/usr/pgsql-11/bin/postgresql-11-check-db-dir /var/lib/pgsql/11/data (code=exited, status=0/SUCCESS)
- Main PID: 5844 (postmaster)
+  Process: 5825 ExecStartPre=/usr/pgsql-11/bin/postgresql-11-check-db-dir /var/lib/pgsql/11/data (code=exited, status=0/SUCCESS)
+ Main PID: 5830 (postmaster)
    CGroup: /system.slice/postgresql-11.service
-           ├─5844 /usr/pgsql-11/bin/postmaster -D /etc/postgresql/11/data
-           ├─5848 postgres: data: checkpointer   
-           ├─5849 postgres: data: background writer   
-           ├─5850 postgres: data: walwriter   
-           ├─5851 postgres: data: autovacuum launcher   
-           ├─5852 postgres: data: stats collector   
-           └─5853 postgres: data: logical replication launcher   
+           ├─5830 /usr/pgsql-11/bin/postmaster -D /etc/postgresql/11/data
+           ├─5833 postgres: data: checkpointer   
+           ├─5834 postgres: data: background writer   
+           ├─5835 postgres: data: walwriter   
+           ├─5836 postgres: data: autovacuum launcher   
+           ├─5837 postgres: data: stats collector   
+           └─5838 postgres: data: logical replication launcher   
 
-jan 25 10:16:28 pgnode1 systemd[1]: Starting PostgreSQL 11 database server...
-jan 25 10:16:28 pgnode1 postmaster[5844]: 2021-01-25 10:16:28 UTC LOG:  listening on IPv6 address "::1", port 5432
-jan 25 10:16:28 pgnode1 postmaster[5844]: 2021-01-25 10:16:28 UTC LOG:  listening on IPv4 address "127.0.0.1", port 5432
-jan 25 10:16:28 pgnode1 postmaster[5844]: 2021-01-25 10:16:28 UTC LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
-jan 25 10:16:28 pgnode1 postmaster[5844]: 2021-01-25 10:16:28 UTC LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
-jan 25 10:16:28 pgnode1 postmaster[5844]: 2021-01-25 10:16:28 UTC LOG:  database system was shut down at 2021-01-25 10:16:27 UTC
-jan 25 10:16:28 pgnode1 postmaster[5844]: 2021-01-25 10:16:28 UTC LOG:  database system is ready to accept connections
-jan 25 10:16:28 pgnode1 systemd[1]: Started PostgreSQL 11 database server.
+jan 26 10:46:22 pgnode1 systemd[1]: Starting PostgreSQL 11 database server...
+jan 26 10:46:22 pgnode1 postmaster[5830]: 2021-01-26 10:46:22 UTC LOG:  listening on IPv6 address "::1", port 5432
+jan 26 10:46:22 pgnode1 postmaster[5830]: 2021-01-26 10:46:22 UTC LOG:  listening on IPv4 address "127.0.0.1", port 5432
+jan 26 10:46:22 pgnode1 postmaster[5830]: 2021-01-26 10:46:22 UTC LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+jan 26 10:46:22 pgnode1 postmaster[5830]: 2021-01-26 10:46:22 UTC LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+jan 26 10:46:22 pgnode1 postmaster[5830]: 2021-01-26 10:46:22 UTC LOG:  database system was shut down at 2021-01-26 10:46:22 UTC
+jan 26 10:46:22 pgnode1 postmaster[5830]: 2021-01-26 10:46:22 UTC LOG:  database system is ready to accept connections
+jan 26 10:46:22 pgnode1 systemd[1]: Started PostgreSQL 11 database server.
 nohup: appending output to ‘nohup.out’
 nohup: appending output to ‘nohup.out’
 Connection to 127.0.0.1 closed.
@@ -668,3 +669,4 @@ Connection to 127.0.0.1 closed.
 (1 row)
 
 Connection to 127.0.0.1 closed.
+ 11:46:30 up 31 days,  1:39,  4 users,  load average: 0,79, 0,61, 0,44
