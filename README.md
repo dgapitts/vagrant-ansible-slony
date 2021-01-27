@@ -13,7 +13,7 @@ Fortunately, this should be easy to extend to a two-host config i.e. my next ste
 
 ## Highlight from an initial single-node setup with ansible to install postgres 
 
-I have attached the full log (build_logs/first_build_single_node_setup.log) for this initial run setup
+I have attached the full log [build_logs/first_build_single_node_setup.log] (build_logs/first_build_single_node_setup.log) for this initial run setup
 
 ```
 [~/projects/vagrant-ansible-slony] # head first_build_single_node_setup.log
@@ -55,9 +55,9 @@ Connection to 127.0.0.1 closed.
 
 ## second build_two node setup
 
-### v0.01
+### v2.01
 
-see (build_logs/second_build_two_node_setup_v0.01.log) for full log details
+see [build_logs/second_build_two_node_setup_v2.01.log](build_logs/second_build_two_node_setup_v2.01.log) for full log details
 
 I've started the next phase i.e. moving to a 
 
