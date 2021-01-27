@@ -1,0 +1,183 @@
+[~/projects/vagrant-ansible-slony] # uptime;yes|vagrant destroy;vagrant up;./two_hosts.sh;vagrant ssh db2 -c "psql -d pgbenchslave -c '\d'";uptime
+ 13:28:08 up 32 days,  3:20,  5 users,  load average: 0,34, 0,22, 0,29
+Vagrant is attempting to interface with the UI in a way that requires
+a TTY. Most actions in Vagrant that require a TTY have configuration
+switches to disable this requirement. Please do that or run Vagrant
+with TTY.
+Bringing machine 'db1' up with 'virtualbox' provider...
+Bringing machine 'db2' up with 'virtualbox' provider...
+==> db1: Checking if box 'geerlingguy/centos7' is up to date...
+==> db1: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> db1: flag to force provisioning. Provisioners marked to run always will still run.
+==> db2: Checking if box 'geerlingguy/centos7' is up to date...
+==> db2: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> db2: flag to force provisioning. Provisioners marked to run always will still run.
+ADD EXTRA ALIAS VIA .bashrc
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: nl.mirrors.clouvider.net
+ * epel: epel.mirror.wearetriple.com
+ * extras: mirror.mijn.host
+ * updates: mirror.hostnet.nl
+Package unzip-6.0-21.el7.x86_64 already installed and latest version
+Package curl-7.29.0-59.el7_9.1.x86_64 already installed and latest version
+Package wget-1.14-18.el7_6.1.x86_64 already installed and latest version
+Nothing to do
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: nl.mirrors.clouvider.net
+ * epel: epel.mirror.wearetriple.com
+ * extras: mirror.mijn.host
+ * updates: mirror.hostnet.nl
+Package 4:perl-5.16.3-297.el7.x86_64 already installed and latest version
+Nothing to do
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: nl.mirrors.clouvider.net
+ * epel: epel.mirror.wearetriple.com
+ * extras: mirror.mijn.host
+ * updates: mirror.hostnet.nl
+Package slony1-11-2.2.8-1.rhel7.x86_64 is obsoleted by slony1_11-2.2.10-1.rhel7.x86_64 which is already installed
+Nothing to do
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: nl.mirrors.clouvider.net
+ * epel: epel.mirror.wearetriple.com
+ * extras: mirror.mijn.host
+ * updates: mirror.hostnet.nl
+Package sysstat-10.1.5-19.el7.x86_64 already installed and latest version
+Nothing to do
+/vagrant/root_cronjob_monitoring_sysstat_plus_custom_pgmon.txt: No such file or directory
+● postgresql-11.service - PostgreSQL 11 database server
+   Loaded: loaded (/usr/lib/systemd/system/postgresql-11.service; enabled; vendor preset: disabled)
+  Drop-In: /etc/systemd/system/postgresql-11.service.d
+           └─custom.conf
+   Active: active (running) since wo 2021-01-27 12:28:19 UTC; 7ms ago
+     Docs: https://www.postgresql.org/docs/11/static/
+  Process: 7137 ExecStartPre=/usr/pgsql-11/bin/postgresql-11-check-db-dir /var/lib/pgsql/11/data (code=exited, status=0/SUCCESS)
+ Main PID: 7143 (postmaster)
+   CGroup: /system.slice/postgresql-11.service
+           ├─7143 /usr/pgsql-11/bin/postmaster -D /etc/postgresql/11/data
+           ├─7146 postgres: data: checkpointer   
+           ├─7147 postgres: data: background writer   
+           ├─7148 postgres: data: walwriter   
+           ├─7149 postgres: data: autovacuum launcher   
+           ├─7150 postgres: data: stats collector   
+           └─7151 postgres: data: logical replication launcher   
+
+jan 27 12:28:19 pgnode1 systemd[1]: Starting PostgreSQL 11 database server...
+jan 27 12:28:19 pgnode1 postmaster[7143]: 2021-01-27 12:28:19 UTC LOG:  listening on IPv6 address "::1", port 5432
+jan 27 12:28:19 pgnode1 postmaster[7143]: 2021-01-27 12:28:19 UTC LOG:  listening on IPv4 address "127.0.0.1", port 5432
+jan 27 12:28:19 pgnode1 postmaster[7143]: 2021-01-27 12:28:19 UTC LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+jan 27 12:28:19 pgnode1 postmaster[7143]: 2021-01-27 12:28:19 UTC LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+jan 27 12:28:19 pgnode1 postmaster[7143]: 2021-01-27 12:28:19 UTC LOG:  database system was shut down at 2021-01-27 12:28:19 UTC
+jan 27 12:28:19 pgnode1 postmaster[7143]: 2021-01-27 12:28:19 UTC LOG:  database system is ready to accept connections
+jan 27 12:28:19 pgnode1 systemd[1]: Started PostgreSQL 11 database server.
+Connection to 127.0.0.1 closed.
+ADD EXTRA ALIAS VIA .bashrc
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: ftp.tudelft.nl
+ * epel: mirrors.ukfast.co.uk
+ * extras: mirror.nl.datapacket.com
+ * updates: mirror.hostnet.nl
+Package unzip-6.0-21.el7.x86_64 already installed and latest version
+Package curl-7.29.0-59.el7_9.1.x86_64 already installed and latest version
+Package wget-1.14-18.el7_6.1.x86_64 already installed and latest version
+Nothing to do
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: ftp.tudelft.nl
+ * epel: mirrors.ukfast.co.uk
+ * extras: mirror.nl.datapacket.com
+ * updates: mirror.hostnet.nl
+Package 4:perl-5.16.3-297.el7.x86_64 already installed and latest version
+Nothing to do
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: ftp.tudelft.nl
+ * epel: mirrors.ukfast.co.uk
+ * extras: mirror.nl.datapacket.com
+ * updates: mirror.hostnet.nl
+Package slony1-11-2.2.8-1.rhel7.x86_64 is obsoleted by slony1_11-2.2.10-1.rhel7.x86_64 which is already installed
+Nothing to do
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: ftp.tudelft.nl
+ * epel: mirrors.ukfast.co.uk
+ * extras: mirror.nl.datapacket.com
+ * updates: mirror.hostnet.nl
+Package sysstat-10.1.5-19.el7.x86_64 already installed and latest version
+Nothing to do
+/vagrant/root_cronjob_monitoring_sysstat_plus_custom_pgmon.txt: No such file or directory
+● postgresql-11.service - PostgreSQL 11 database server
+   Loaded: loaded (/usr/lib/systemd/system/postgresql-11.service; enabled; vendor preset: disabled)
+  Drop-In: /etc/systemd/system/postgresql-11.service.d
+           └─custom.conf
+   Active: active (running) since wo 2021-01-27 12:28:23 UTC; 7ms ago
+     Docs: https://www.postgresql.org/docs/11/static/
+  Process: 7100 ExecStartPre=/usr/pgsql-11/bin/postgresql-11-check-db-dir /var/lib/pgsql/11/data (code=exited, status=0/SUCCESS)
+ Main PID: 7106 (postmaster)
+   CGroup: /system.slice/postgresql-11.service
+           ├─7106 /usr/pgsql-11/bin/postmaster -D /etc/postgresql/11/data
+           ├─7109 postgres: data: checkpointer   
+           ├─7110 postgres: data: background writer   
+           ├─7111 postgres: data: walwriter   
+           ├─7112 postgres: data: autovacuum launcher   
+           ├─7113 postgres: data: stats collector   
+           └─7114 postgres: data: logical replication launcher   
+
+jan 27 12:28:23 pgnode2 systemd[1]: Starting PostgreSQL 11 database server...
+jan 27 12:28:23 pgnode2 postmaster[7106]: 2021-01-27 12:28:23 UTC LOG:  listening on IPv6 address "::1", port 5432
+jan 27 12:28:23 pgnode2 postmaster[7106]: 2021-01-27 12:28:23 UTC LOG:  listening on IPv4 address "127.0.0.1", port 5432
+jan 27 12:28:23 pgnode2 postmaster[7106]: 2021-01-27 12:28:23 UTC LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+jan 27 12:28:23 pgnode2 postmaster[7106]: 2021-01-27 12:28:23 UTC LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+jan 27 12:28:23 pgnode2 postmaster[7106]: 2021-01-27 12:28:23 UTC LOG:  database system was shut down at 2021-01-27 12:28:23 UTC
+jan 27 12:28:23 pgnode2 postmaster[7106]: 2021-01-27 12:28:23 UTC LOG:  database system is ready to accept connections
+jan 27 12:28:23 pgnode2 systemd[1]: Started PostgreSQL 11 database server.
+Connection to 127.0.0.1 closed.
+two_hosts_setup_and_preload_pgbench.sh
+step 1
+createuser: creation of new role failed: ERROR:  role "vagrant" already exists
+step 2
+createdb: database creation failed: ERROR:  database "pgbench" already exists
+step 3
+connection to database "pgbench" failed:
+FATAL:  role "root" does not exist
+psql: FATAL:  role "root" does not exist
+createuser: creation of new role failed: ERROR:  role "slonyrep" already exists
+ALTER ROLE
+ALTER ROLE
+GRANT
+GRANT
+psql: FATAL:  database "pgbenchslave" does not exist
+psql: FATAL:  database "pgbenchslave" does not exist
+createuser: too many command-line arguments (first is "changeme")
+Try "createuser --help" for more information.
+Connection to 127.0.0.1 closed.
+two_hosts_setup_schemaonly_pgbenchslave.sh
+createuser: creation of new role failed: ERROR:  role "vagrant" already exists
+createdb: database creation failed: ERROR:  database "pgbenchslave" already exists
+psql: FATAL:  role "root" does not exist
+createuser: creation of new role failed: ERROR:  role "slonyrep" already exists
+ALTER ROLE
+ALTER ROLE
+psql: FATAL:  database "pgbench" does not exist
+psql: FATAL:  database "pgbench" does not exist
+GRANT
+GRANT
+createuser: too many command-line arguments (first is "changeme")
+Try "createuser --help" for more information.
+Connection to 127.0.0.1 closed.
+                  List of relations
+ Schema |          Name          |   Type   |  Owner  
+--------+------------------------+----------+---------
+ public | pgbench_accounts       | table    | vagrant
+ public | pgbench_branches       | table    | vagrant
+ public | pgbench_history        | table    | vagrant
+ public | pgbench_history_id_seq | sequence | vagrant
+ public | pgbench_tellers        | table    | vagrant
+(5 rows)
+
+Connection to 127.0.0.1 closed.
+ 13:28:30 up 32 days,  3:21,  5 users,  load average: 0,57, 0,29, 0,31

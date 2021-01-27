@@ -17,11 +17,11 @@ config.vm.define "db1" do |app|
 end
 
 # Postgres server 2.
-#config.vm.define "db2" do |app|
-#  app.vm.hostname = "pgnode2"
-#  app.vm.box = "geerlingguy/centos7"
-#  app.vm.network :private_network, ip: "192.168.60.5"
-#end
+config.vm.define "db2" do |app|
+  app.vm.hostname = "pgnode2"
+  app.vm.box = "geerlingguy/centos7"
+  app.vm.network :private_network, ip: "192.168.60.5"
+end
 
 # Postgres server 3.
 #config.vm.define "db3" do |app|
